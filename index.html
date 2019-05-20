@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>Message List App</title>
+		<link rel="stylesheet" type="text/css" href="./style.css">
+	</head>
+	<body style="background-image: url(1.jpg)">
+		<header>
+			<nav>
+				<ul class="topnav">
+					<a class="active" href="index.html">Main</a>
+					<a href="trashCan.html">Trash</a>
+					<a href="about.html">About</a>
+				</ul>
+			</nav>
+		</header>
+		<section class="main">
+			<form>
+				<textarea rows="15" cols="70" placeholder="enter message..." id="item" style="font-family: fantasy"></textarea>
+				<div class="svg-wrapper" id="add">
+					<button class="btn-hover" id="cleanUp">textClean</button>
+					<svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+						<rect class="shape" height="60" width="120" />
+					</svg>
+					<div class="text">add!</div>
+				</div>
+			</form>
+		</section>
+
+		<section class="container">
+			<ul class="messages" id="current" style="list-style: none;"></ul>
+			<button class="clearAll" id="clearAll">clear all messages!!!</button>
+		</section>
+		<script src="./index.js"></script>
+	</body>
+</html>

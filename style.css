@@ -1,0 +1,378 @@
+@charset "UTF-8";
+
+body {
+  background-size: 1550px;
+}
+
+body.about {
+  background-image: url(./4.jpg);
+  background-size: 1300px;
+  position: relative;
+}
+
+section.main {
+  float: left;
+  width: 50%;
+}
+
+section.container {
+  float: right;
+  width: 50%;
+}
+
+section.info {
+  position: absolute;
+  left: 300px;
+  top: 80px;
+  margin: 0 0 0 30px;
+}
+
+/* topnav */
+.topnav {
+  background-color: rgba(60, 115, 220, 0.3);
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin: 1px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: rgb(50, 115, 220);
+  color: white;
+}
+
+/* text form*/
+textarea {
+  background-color: rgba(91,194,231);
+  color: red;
+}
+
+::placeholder {
+  font-family: 'Roboto Condensed';
+  font-size: 15px;
+}
+
+textarea [input] {
+  font-family: 'Roboto Condensed';
+  font-size: 15px;
+}
+
+/* add button */
+.svg-wrapper {
+  height: 60px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+}
+
+.shape {
+  fill: transparent;
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  stroke: #19f6e8;
+}
+
+.text {
+  color: #fff;
+  font-family: 'Roboto Condensed';
+  font-size: 22px;
+  letter-spacing: 8px;
+  line-height: 32px;
+  position: relative;
+  top: -48px;
+  left: 30px;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+.svg-wrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+
+/* cleanUp button */
+.btn-hover {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+  box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+
+  border-radius: 50px;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+  background-position: 100% 0;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+/* message list */
+ul.messages li {
+  width: 100%;
+  min-height: 50px;
+  float: left;
+  font-size: 22px;
+  font-weight: 500;
+  font-family: fantasy;
+  color: #fff;
+  fill: transparent;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.10);
+  margin: 0 5 10px 0;
+  padding: 14px 100px 14px 14px;
+  word-break: break-word;
+}
+
+ul.cleared li {
+  width: 100%;
+  min-height: 50px;
+  float: left;
+  font-size: 22px;
+  font-weight: 500;
+  font-family: fantasy;
+  color: #fff;
+  fill: transparent;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.10);
+  margin: 0 5 10px 0;
+  padding: 14px 100px 14px 14px;
+  word-break: break-word;
+}
+
+/* delete button */
+ul.messages li button {
+  opacity: 0.3;
+  height: 25px;
+  width: 50px;
+  margin: 0 0 0 20px;
+}
+
+ul.messages li button:hover {
+  opacity: 1;
+}
+
+ul.messages li button:before ul.messages li button:after {
+  position: absolute;
+  left: 15px;
+  content: 'delete ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+
+ul.messages li button:before {
+  transform: rotate(45deg);
+}
+
+ul.messages li button:after {
+  transform: rotate(-45deg);
+}
+
+/* trash kill button */
+ul.cleared li .buttons button.clear {
+  opacity: 0.3;
+  height: 25px;
+  width: 50px;
+  margin: 0 0 0 20px;
+}
+
+ul.cleared li .buttons button.clear:hover {
+  opacity: 1;
+}
+
+ul.cleared li .buttons button.clear:before ul.cleared li .buttons button.clear:after {
+  position: absolute;
+  left: 15px;
+  content: 'delete ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+
+ul.cleared li .buttons button.clear:before {
+  transform: rotate(45deg);
+}
+
+ul.cleared li .buttons button.clear:after {
+  transform: rotate(-45deg);
+}
+
+/* trash recover button */
+ul.cleared li .buttons button.recover {
+  opacity: 0.3;
+  height: 25px;
+  width: 80px;
+  margin: 0 0 0 20px;
+}
+
+ul.cleared li .buttons button.recover:hover {
+  opacity: 1;
+}
+
+ul.cleared li .buttons button.recover:before ul.cleared li .buttons button.recover:after {
+  position: absolute;
+  left: 15px;
+  content: 'delete ';
+  height: 33px;
+  width: 2px;
+  background-color: #333;
+}
+
+ul.cleared li .buttons button.recover:before {
+  transform: rotate(45deg);
+}
+
+ul.cleared li .buttons button.recover:after {
+  transform: rotate(-45deg);
+}
+
+/* clear all button */
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200,900');
+
+:root {
+  --text-color: hsla(210, 50%, 85%, 1);
+  --shadow-color: hsla(210, 40%, 52%, .4);
+  --btn-color: hsl(210, 80%, 42%);
+  --bg-color: #141218;
+}
+
+button.clearAll {
+  position:relative;
+  padding: 10px 20px;  
+  border: none;
+  background: none;
+  cursor: pointer;
+  
+  font-family: "Source Code Pro";
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 30px;  
+  color: var(--text-color);
+  
+  background-color: var(--btn-color);
+  box-shadow: var(--shadow-color) 2px 2px 22px;
+  border-radius: 4px; 
+  z-index: 0;  
+  overflow: hidden;   
+}
+
+button:focus {
+  outline-color: transparent;
+  box-shadow: var(--btn-color) 2px 2px 22px;
+}
+
+.right::after, button::after {
+  content: var(--content);
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  padding: 40px 40px;
+  pointer-events:none;
+}
+
+button::after{
+  font-weight: 200;
+  top: -30px;
+  left: -20px;
+} 
+
+.right, .left {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.right {
+  left: 66%;
+}
+.left {
+  right: 66%;
+}
+.right::after {
+  top: -30px;
+  left: calc(-66% - 20px);
+  
+  background-color: var(--bg-color);
+  color: transparent;
+  transition: transform .4s ease-out;
+  transform: translate(0, -90%) rotate(0deg)
+}
+
+button:hover .right::after {
+  transform: translate(0, -47%) rotate(0deg)
+}
+
+button .right:hover::after {
+  transform: translate(0, -50%) rotate(-7deg)
+}
+
+button .left:hover ~ .right::after {
+  transform: translate(0, -50%) rotate(7deg)
+}
+
+/* bubbles for all buttons*/
+button::before {
+  content: '';
+  pointer-events: none;
+  opacity: .6;
+  background:
+    radial-gradient(circle at 20% 35%,  transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 75% 44%, transparent 0,  transparent 2px, var(--text-color) 3px, var(--text-color) 4px, transparent 4px),
+    radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, var(--text-color) 5px, var(--text-color) 6px, transparent 6px);
+
+  width: 100%;
+  height: 300%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: bubbles 5s linear infinite both;
+}
+
+@keyframes bubbles {
+  from {
+    transform: translate();
+  }
+  to {
+    transform: translate(0, -66.666%);
+  }
+}
