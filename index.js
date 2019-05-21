@@ -1,10 +1,12 @@
 
-var data = localStorage.getItem('currentList') ? 
-  JSON.parse(localStorage.getItem('currentList')) : 
+var data = localStorage.getItem('currentList') ?
+  JSON.parse(localStorage.getItem('currentList')) :
   {
   current: [],
   trash: []
   }
+
+data.current.push("sample message");
 
 renderData();
 
@@ -70,7 +72,7 @@ function clearMessage() {
   var item = this.parentNode;
   var parent = item.parentNode;
   var value = item.innerText;
-  
+
   data.current.splice(data.current.indexOf(value), 1);
   data.trash.push(value);
   dataUpdated();
