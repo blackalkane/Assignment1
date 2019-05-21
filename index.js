@@ -1,4 +1,6 @@
-var preFilled = { "preM" : "sample message" }
+var sample = "{\"preM\": \"sample message\"}"
+
+var preFilled = JSON.parse(sample);
 
 addPreFilledItem(preFilled.preM);
 

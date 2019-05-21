@@ -1,4 +1,6 @@
-var preTrash = { "preT" : "sample trash" }
+var sampleT = "{\"preT\": \"sample trash\"}"
+
+var preTrash = JSON.parse(sampleT);
 
 var data = JSON.parse(localStorage.getItem('currentList'));
 
