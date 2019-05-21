@@ -183,7 +183,7 @@ ul.cleared li {
 ul.messages li button {
   opacity: 0.3;
   height: 25px;
-  width: 50px;
+  width: 60px;
   margin: 0 0 0 20px;
 }
 
@@ -278,22 +278,22 @@ ul.cleared li .buttons button.recover:after {
 
 button.clearAll {
   position:relative;
-  padding: 10px 20px;  
+  padding: 10px 20px;
   border: none;
   background: none;
   cursor: pointer;
-  
+
   font-family: "Source Code Pro";
   font-weight: 900;
   text-transform: uppercase;
-  font-size: 30px;  
+  font-size: 30px;
   color: var(--text-color);
-  
+
   background-color: var(--btn-color);
   box-shadow: var(--shadow-color) 2px 2px 22px;
-  border-radius: 4px; 
-  z-index: 0;  
-  overflow: hidden;   
+  border-radius: 4px;
+  z-index: 0;
+  overflow: hidden;
 }
 
 button:focus {
@@ -314,7 +314,7 @@ button::after{
   font-weight: 200;
   top: -30px;
   left: -20px;
-} 
+}
 
 .right, .left {
   position: absolute;
@@ -331,7 +331,7 @@ button::after{
 .right::after {
   top: -30px;
   left: calc(-66% - 20px);
-  
+
   background-color: var(--bg-color);
   color: transparent;
   transition: transform .4s ease-out;
