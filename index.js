@@ -1,12 +1,13 @@
+var preFilled = { "preM" : "sample message" }
+
+addPreFilledItem(preFilled.preM);
 
 var data = localStorage.getItem('currentList') ?
   JSON.parse(localStorage.getItem('currentList')) :
   {
-  current: [],
-  trash: []
+    current: [],
+    trash: []
   }
-
-data.current.push("sample message");
 
 renderData();
 
@@ -25,10 +26,11 @@ document.getElementById('cleanUp').onclick = function () {
 }
 
 document.getElementById('clearAll').addEventListener('click', function () {
-    if (data.current.length) {
-      moveToTrash();
-      document.getElementById('current').innerHTML = '';
-    }
+  if (data.current.length) {
+    moveToTrash();
+    document.getElementById('current').innerHTML = '';
+    addPreFilledItem("sample message");
+  }
 });
 
 function dataUpdated() {
@@ -45,10 +47,25 @@ function renderData() {
 }
 
 function addItem(value) {
-    addItemCurrent(value);
-    document.getElementById('item').value = '';
-    data.current.push(value);
-    dataUpdated();
+  addItemCurrent(value);
+  document.getElementById('item').value = '';
+  data.current.push(value);
+  dataUpdated();
+}
+
+function addPreFilledItem(text) {
+  var list = document.getElementById('current');
+
+  var item = document.createElement('li');
+  item.innerText = text;
+
+  var clear = document.createElement('button');
+  clear.classList.add('clear');
+  clear.innerHTML = 'delete';
+
+  item.appendChild(clear);
+
+  list.insertBefore(item, list.childNodes[0]);
 }
 
 function addItemCurrent(text) {
